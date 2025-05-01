@@ -1,0 +1,30 @@
+@model IEnumerable<ShantiHospitalWeb.Models.Patient>
+
+<h2>Patient List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Registered On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.FullName</td>
+                <td>@patient.DateOfBirth.ToShortDateString()</td>
+                <td>@patient.Gender</td>
+                <td>@patient.Phone</td>
+                <td>@patient.Email</td>
+                <td>@patient.Address</td>
+                <td>@patient.RegisteredOn.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
